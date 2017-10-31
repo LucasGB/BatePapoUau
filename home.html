@@ -12,27 +12,28 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <style>
             .titulo{
-                width: 356px;
                 position: absolute;
                 font-family: Calibri;
-                font-size: 40px;
+                font-size: 30px;
                 text-align: center;
                 color: #fff;
                 font-weight: bold;
-                margin-left: 56px;
-                margin-top: 143px;
+                margin-left: 163px;
+                margin-top: 136px;
             }
             .shadow{
-                width: 356px;
+                width: 200px;
                 height: 200px;
                 position: absolute;
                 opacity: 0.6;
                 background: #000;
-                margin-left: 56px;
+                margin-left: 134px;
+                border-radius: 50%;
             }
             .img-circle{
-                width: 356px;
+                width: 200px;
                 height: 200px;
+                border-radius: 100%;
             }
         </style>
     </head>
@@ -43,8 +44,8 @@ and open the template in the editor.
                 <div class="modal-content">
                     <div class="modal-header" align="center">
                         <div class="shadow"></div>
-                        <div class="titulo">Bate Papo Uau!</div>
-                        <img class="img-circle" id="img_logo" src="images/tenor.gif" style="margin-left: 56px;">
+                        <div class="titulo">Chat Uau!</div>
+                        <img class="img-circle" id="img_logo" src="images/tenor.gif" style="margin-left: 134px;">
                     </div>
 
                     <!-- Begin # DIV Form -->
@@ -53,7 +54,18 @@ and open the template in the editor.
                         <!-- Begin # Login Form -->
                         <form id="login-form">
                             <div class="modal-body">    
+                                <h5>Nova Sala</h5>
                                 <input id="login_username" class="form-control" type="text" placeholder="Room" required>
+                            </div>
+                            <div class="modal-body">    
+                                <h5>Selecione a sala existente</h5>
+                                <select class="form-control">
+                                    <option>Sala 1</option>
+                                    <option>Sala 1</option>
+                                    <option>Sala 1</option>
+                                    <option>Sala 1</option>
+                                    <option>Sala 1</option>
+                                </select>
                             </div>
                             <div class="modal-footer">
                                 <div>
