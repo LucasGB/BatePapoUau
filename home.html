@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Bate Papo Uau!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <style>
+            .titulo{
+                width: 356px;
+                position: absolute;
+                font-family: Calibri;
+                font-size: 40px;
+                text-align: center;
+                color: #fff;
+                font-weight: bold;
+                margin-left: 56px;
+                margin-top: 143px;
+            }
+            .shadow{
+                width: 356px;
+                height: 200px;
+                position: absolute;
+                opacity: 0.6;
+                background: #000;
+                margin-left: 56px;
+            }
+            .img-circle{
+                width: 356px;
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- BEGIN # MODAL LOGIN -->
+        <div class="modal" style="display: inline" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" align="center">
+                        <div class="shadow"></div>
+                        <div class="titulo">Bate Papo Uau!</div>
+                        <img class="img-circle" id="img_logo" src="images/tenor.gif" style="margin-left: 56px;">
+                    </div>
+
+                    <!-- Begin # DIV Form -->
+                    <div id="div-forms">
+
+                        <!-- Begin # Login Form -->
+                        <form id="login-form">
+                            <div class="modal-body">    
+                                <input id="login_username" class="form-control" type="text" placeholder="Room" required>
+                            </div>
+                            <div class="modal-footer">
+                                <div>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- End # Login Form -->
+                    </div>
+                    <!-- End # DIV Form -->
+
+                </div>
+            </div>
+        </div>
+        <!-- END # MODAL LOGIN -->
+    </body>
+</html>
