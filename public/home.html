@@ -90,17 +90,9 @@ and open the template in the editor.
     <script>
         var socket = io.connect();
 
-//        var socket_connect = function (room) {
-//                return io('localhost:3000', {
-//                query: 'r_var='+room
-//        });
-//
         function join_room(){
-
             var room = document.getElementById('room_text').value;
             window.location.href = room;
-//
-            socket.emit('join_room', room);
         }
 
 //var random_room = Math.floor((Math.random() * 2) + 1);

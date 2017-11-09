@@ -201,8 +201,28 @@ and open the template in the editor.
             <div class="nomeUsuarioRemetente">
                 Conectado como:<br/><strong>nomeDoUsuario</strong>
             </div>
-            <input id="login_username" class="form-control" type="text" placeholder="Mensagem" required style="width: 75%; margin-top: 25px; display: inline">
-            <button type="submit" class="btn btn-primary" style="width: 10%; float: right; margin-top: 26px; margin-right: 10px;">Enviar</button>
+            <input id="message_area" class="form-control" type="text" placeholder="Mensagem" required style="width: 75%; margin-top: 25px; display: inline">
+            <button type="submit" class="btn btn-primary" style="width: 10%; float: right; margin-top: 26px; margin-right: 10px;" onclick="send_message();">Enviar</button>
         </div>
     </body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var url = window.location.pathname;
+        var room = url.split("/").slice(-1)[0];
+        var socket = io.connect();
+
+        socket.emit('join_room', room);
+
+
+        socket.on('message', function(data){
+            alert(data);
+        });
+
+        function send_message(){
+            var message = document.getElementById('message_area').value;
+            socket.emit('message', {message: message, room: room});
+//            alert('message sent!' + message);
+        }
+
+    </script>
 </html>

@@ -20,8 +20,17 @@ io.on('connection', function (socket) {
     console.log("New connection");
 
     socket.on('join_room', function (room) {
+      //socket.room = ""+room;
   		socket.join(room);
   		console.log('User joined room #'+room);
+      console.log(socket.rooms);
+    });
+
+    socket.on('message', function (message) {
+      console.log('received message ' + message.message);
+
+      io.sockets.in(message.room).emit('message', message);
+      //console.log(socket.rooms);
     });
 
     socket.on('disconnect', function (data) { 
