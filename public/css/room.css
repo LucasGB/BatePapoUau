@@ -63,7 +63,7 @@ body{
     margin-top: 78px;
     z-index: 98;
 }
-.caixaHistorico .msgUnica{
+.caixaHistorico .message{
     width: 96%;
     float: left;
     margin-left: 1%;
@@ -74,26 +74,26 @@ body{
     padding-left: 1%;
     padding-right: 1%;
 }
-.caixaHistorico .msgUnica.pintado{
+.caixaHistorico .message.pintado{
     background: #f00;
 }
-.caixaHistorico .msgUnica .horaMsg{
+.caixaHistorico .message .horaMsg{
     float: left;
 }
-.caixaHistorico .msgUnica .remetente{
+.caixaHistorico .message .remetente{
     float: left;
     padding-left: 10px;
 }
-.caixaHistorico .msgUnica .destinatario{
+.caixaHistorico .message .destinatario{
     float: left;
     padding-left: 10px;
     padding-right: 10px
 }
-.caixaHistorico .msgUnica .falouPara{
+.caixaHistorico .message .falouPara{
     float: left;
     padding-left: 10px;
 }
-.caixaHistorico .msgUnica .msg{
+.caixaHistorico .message .msg{
     float: left;
     padding-left: 10px;
 }

@@ -26,90 +26,13 @@ and open the template in the editor.
             </div>
         </div>
         <div class="caixaHistorico">
-            <div class="msgUnica">
+            <div id="test" class="message">
                 <div class="horaMsg">(15:10:10)</div>
                 <div class="remetente">Usuario1</div>
-                <div class="falouPara">falou para</div>
-                <div class="destinatario">Usuario2: </div>
+                <div class="falouPara">disse:</div>                
                 <div class="msg">Olá tudo bem?</div>
             </div>
-            <div class="msgUnica pintado">
-                <div class="horaMsg">(15:10:10)</div>
-                <div class="remetente">Usuario1</div>
-                <div class="falouPara">falou para</div>
-                <div class="destinatario">Usuario2: </div>
-                <div class="msg">Olá tudo bem?</div>
-            </div>
-            <div class="msgUnica">
-                <div class="horaMsg">(15:10:10)</div>
-                <div class="remetente">Usuario1</div>
-                <div class="falouPara">falou para</div>
-                <div class="destinatario">Usuario2: </div>
-                <div class="msg">Olá tudo bem?</div>
-            </div>
-            <div class="msgUnica pintado">
-                <div class="horaMsg">(15:10:10)</div>
-                <div class="remetente">Usuario1</div>
-                <div class="falouPara">falou para</div>
-                <div class="destinatario">Usuario2: </div>
-                <div class="msg">Olá tudo bem?</div>
-            </div>
-            <div class="msgUnica">
-                <div class="horaMsg">(15:10:10)</div>
-                <div class="remetente">Usuario1</div>
-                <div class="falouPara">falou para</div>
-                <div class="destinatario">Usuario2: </div>
-                <div class="msg">Olá tudo bem?</div>
-            </div>
-            <div class="msgUnica pintado">
-                <div class="horaMsg">(15:10:10)</div>
-                <div class="remetente">Usuario1</div>
-                <div class="falouPara">falou para</div>
-                <div class="destinatario">Usuario2: </div>
-                <div class="msg">Olá tudo bem?</div>
-            </div>
-            <div class="msgUnica">
-                <div class="horaMsg">(15:10:10)</div>
-                <div class="remetente">Usuario1</div>
-                <div class="falouPara">falou para</div>
-                <div class="destinatario">Usuario2: </div>
-                <div class="msg">Olá tudo bem?</div>
-            </div>
-            <div class="msgUnica pintado">
-                <div class="horaMsg">(15:10:10)</div>
-                <div class="remetente">Usuario1</div>
-                <div class="falouPara">falou para</div>
-                <div class="destinatario">Usuario2: </div>
-                <div class="msg">Olá tudo bem?</div>
-            </div>
-            <div class="msgUnica">
-                <div class="horaMsg">(15:10:10)</div>
-                <div class="remetente">Usuario1</div>
-                <div class="falouPara">falou para</div>
-                <div class="destinatario">Usuario2: </div>
-                <div class="msg">Olá tudo bem?</div>
-            </div>
-            <div class="msgUnica pintado">
-                <div class="horaMsg">(15:10:10)</div>
-                <div class="remetente">Usuario1</div>
-                <div class="falouPara">falou para</div>
-                <div class="destinatario">Usuario2: </div>
-                <div class="msg">Olá tudo bem?</div>
-            </div>
-            <div class="msgUnica">
-                <div class="horaMsg">(15:10:10)</div>
-                <div class="remetente">Usuario1</div>
-                <div class="falouPara">falou para</div>
-                <div class="destinatario">Usuario2: </div>
-                <div class="msg">Olá tudo bem?</div>
-            </div>
-            <div class="msgUnica pintado">
-                <div class="horaMsg">(15:10:10)</div>
-                <div class="remetente">Usuario1</div>
-                <div class="falouPara">falou para</div>
-                <div class="destinatario">Usuario2: </div>
-                <div class="msg">Olá tudo bem?</div>
-            </div>
+
         </div>
         <div class="caixaUsuarios">
             <div class="cadaUsuario">
@@ -218,10 +141,18 @@ and open the template in the editor.
             alert(data);
         });
 
+        socket.on('update_chat', function(data){
+            var div = document.getElementById('test');
+            div.html(data.message);
+        });
+
+
         function send_message(){
             var message = document.getElementById('message_area').value;
-            socket.emit('message', {message: message, room: room});
-//            alert('message sent!' + message);
+            var message_body = '<div id="test" class="message"><div class=horaMsg>(15:10:10)</div><div class="remetente">Usuario1</div><div class="falouPara">disse</div><div class="msg">"' + message + '</div></div>';
+
+            socket.emit('message', JSON.stringify({message: message_body, room: room}));
+            //alert('message sent!' + message);
         }
 
     </script>
